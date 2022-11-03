@@ -25,9 +25,9 @@ const Home = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const contactRef = useRef(null);
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const contactRef = useRef("");
   const firstScrollRef = useRef(null);
   const handleSubmit = async event => {
     event.preventDefault();

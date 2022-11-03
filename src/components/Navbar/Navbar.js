@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { Nav, 
     NavbarContainer, 
     NavLogo, 
@@ -13,6 +13,10 @@ import { Nav,
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib'
 import { Button } from '../../globalStyles';
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { firestore } from '../../firebase';
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 
 
 function Navbar() {
@@ -58,6 +62,29 @@ function Navbar() {
     }, [])
 
     window.addEventListener('resize', showButton);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const contactRef = useRef(null);
+  const firstScrollRef = useRef(null);
+  const handleSubmit = async event => {
+    event.preventDefault();
+    console.log('first 👉️', nameRef.current.value);
+    console.log('last 👉️', emailRef.current.value);
+    try {
+        await addDoc(collection(firestore, 'users'), {
+          name: nameRef.current.value,
+          email: emailRef.current.value,
+          contact: contactRef.current.value
+        })
+      } catch (err) {
+        alert(err)
+      }
+    setShow(false);
+  };
 
     return (
         <>
@@ -87,22 +114,20 @@ function Navbar() {
                     
                     
                         <NavItem onClick={handleProductsClick} productsClick={productsClick}>
-                            <NavLinks to='/Products' onClick={closeMobileMenu}>
+                            <NavLinks to='/' onClick={closeMobileMenu}>
                                 What is IMLEX?
                             </NavLinks>
                         </NavItem>
 
                         <NavItem onClick={handleProductsClick} productsClick={productsClick}>
-                            <NavLinks to='/Products' onClick={closeMobileMenu}>
+                            <NavLinks to='/' onClick={closeMobileMenu}>
                                 How IMLEX works?
                             </NavLinks>
                         </NavItem>
 
                         <NavItemBtn >
                             {button ? (
-                                <NavBtnLink to='/sign-up'>
-                                    <Button primary>Try IMLEX</Button>
-                                </NavBtnLink>
+                                    <Button primary onClick={handleShow}>Try IMLEX</Button>
                             ) : (
                                 <NavBtnLink to='/sign-up'>
                                     <Button onClick={closeMobileMenu} fontBig primary>SIGN UP</Button>
@@ -113,6 +138,46 @@ function Navbar() {
                     </NavMenu>
                 </NavbarContainer>
             </Nav>
+            <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Enter your details</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter name"
+                ref={nameRef}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                ref={emailRef}
+              />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Contact No.</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Enter contact number"
+                ref={contactRef}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
+              Submit
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
         </IconContext.Provider>    
         </>
     )

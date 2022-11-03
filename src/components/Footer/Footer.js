@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { Button } from '../../globalStyles';
 import {
   FaFacebook,
@@ -27,11 +27,23 @@ import {
   SocialIcons,
   SocialIconLink
 } from './Footer.elements';
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { firestore } from "../../firebase";
 
 function Footer() {
-
+  const emailRef = useRef(null);
   const date = new Date();
-
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+        await addDoc(collection(firestore, 'newsletter'), {
+          email: emailRef.current.value
+        })
+      } catch (err) {
+        alert(err)
+      }
+      emailRef.current.value="";
+  };
   return (
     <FooterContainer>
       <FooterSubscription>
@@ -40,15 +52,15 @@ function Footer() {
         </FooterSubHeading>
         <FooterSubText>You can unsubscribe at any time.</FooterSubText>
         <Form>
-          <FormInput name='email' type='email' placeholder='Your Email' />
-          <Button fontBig>Subscribe</Button>
+          <FormInput name='email' type='email' placeholder='Your Email' ref={emailRef}/>
+          <Button fontBig onClick={handleSubmit}>Subscribe</Button>
         </Form>
       </FooterSubscription>
       <FooterLinksContainer>
         <FooterLinksWrapper>
           <FooterLinkItems>
             <FooterLinkTitle>About Us</FooterLinkTitle>
-            <FooterLink to='/sign-up'>How it works</FooterLink>
+            <FooterLink to='/'>How it works</FooterLink>
             <FooterLink to='/'>Testimonials</FooterLink>
             <FooterLink to='/'>Careers</FooterLink>
             <FooterLink to='/'>Investors</FooterLink>

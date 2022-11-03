@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom'
     start,
     noButton
 }) => {
+    console.log(noButton);
     return (
         <>
             <InfoSec lightBg={lightBg}>
@@ -31,7 +32,7 @@ import { Link } from 'react-router-dom'
                             <Heading lightText={lightText}>{headline}</Heading>
                             <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
                             <Link to='/sign-up'>
-                            {noButton==false?<Button big fontBig primary={primary}>{buttonLabel}</Button>:null}
+                            {noButton===undefined?<Button big fontBig primary={primary}>{buttonLabel}</Button>:null}
                             </Link>
                             </TextWrapper>
                         </InfoColumn>

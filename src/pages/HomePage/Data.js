@@ -47,14 +47,14 @@ were achieved or not or which viewer was attentive till what part.`,
     lightTextDesc: false,
     topLine: '',
     headline:
-      `IMLEX is your one stop solution to 
-enhance video watching experience 
-for your users.`,
+      `IMLEX is your one stop solution 
+to enhance video watching 
+experience for your users.`,
     description:
-      `While a creator puts his/her heart in making the best possible content for their viewers, eventually 
-your viewers are humans. And humans want personalization and interaction, and based on the 
-interaction they want recommendation. We are here to make your user journey more INTERACTIVE 
-and PERSONALISED.
+      `While a creator puts his/her heart in making the best possible content for 
+their viewers, eventually your viewers are humans. And humans want personalization
+and interaction, and based on the interaction they want recommendation. We are here
+to make your user journey more INTERACTIVE and PERSONALISED.
       
 Well don't worry we will remove the extra a's between you and your end user.`,
     buttonLabel: 'Wanna know how?',
@@ -73,10 +73,11 @@ Well don't worry we will remove the extra a's between you and your end user.`,
     topLine: '',
     headline: 'IMLEX - Amplifying your reach',
     description:
-      `IMLEX helps you to create and post engaging videos or convert your existing videos into a better, 
-interactive version of it. Get detailed analytics for the video-user interaction. Feedback for creator.
-Add engagement for end user. Better personalised experience for the viewer. 
-Reroute your video as per the inputs from the viewer.
+      `IMLEX helps you to create and post engaging videos or convert your existing 
+videos into a better, interactive version of it. Get detailed analytics for the video-user
+interaction. Feedback for creator.Add engagement for end user. Better 
+personalised experiencefor the viewer. Reroute your video as per the inputs 
+from the viewer.
 `,
     buttonLabel: 'Try IMLEX for free!',
     imgStart: 'start',
@@ -94,8 +95,8 @@ Reroute your video as per the inputs from the viewer.
     topLine: '',
     headline: 'IMLEX - How it works?',
     description:
-      `While watching the video the viewer gets interactive questions to check his/her progress during 
-different intervals.
+      `While watching the video the viewer gets interactive questions to check 
+his/her progress during different intervals.
 `,
     //buttonLabel: 'Try IMLEX for free!',
     imgStart: 'start',
@@ -114,8 +115,8 @@ different intervals.
     topLine: '',
     headline: '',
     description:
-      `The user get to know the results and can check his progress and get feedback and results based on 
-the inputs.
+      `The user get to know the results and can check his progress and get 
+feedback and results based on the inputs.
 `,
     //buttonLabel: 'Try IMLEX for free!',
     imgStart: 'start',
