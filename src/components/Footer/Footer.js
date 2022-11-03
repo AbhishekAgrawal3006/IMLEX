@@ -95,9 +95,9 @@ function Footer() {
         <SocialMediaWrap>
           <SocialLogo to='/'>
             <SocialIcon />
-            ULTRA
+            IMLEX
           </SocialLogo>
-          <WebsiteRights>ULTRA © {date.getFullYear()} </WebsiteRights>
+          <WebsiteRights>IMLEX © {date.getFullYear()} </WebsiteRights>
           <SocialIcons>
             <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
               <FaFacebook />
