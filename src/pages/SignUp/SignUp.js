@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useRef, useState} from 'react';
 import { InfoSection } from '../../components';
 import { homeObjOne } from './Data';
 
