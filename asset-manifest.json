@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/IMLEX/static/css/main.e6c13ad2.css",
-    "main.js": "/IMLEX/static/js/main.c5a87286.js",
+    "main.js": "/IMLEX/static/js/main.b6ad799d.js",
     "static/media/phonekijagah.jpeg": "/IMLEX/static/media/phonekijagah.95e2c1ba5cdae8b66e56.jpeg",
     "static/media/third.PNG": "/IMLEX/static/media/third.d7c5e48bf17528dca6e2.PNG",
     "static/media/first.PNG": "/IMLEX/static/media/first.f7323b806c8064b93b93.PNG",
@@ -13,10 +13,10 @@
     "static/media/ladki.jpeg": "/IMLEX/static/media/ladki.3ee462c0178c795604e4.jpeg",
     "index.html": "/IMLEX/index.html",
     "main.e6c13ad2.css.map": "/IMLEX/static/css/main.e6c13ad2.css.map",
-    "main.c5a87286.js.map": "/IMLEX/static/js/main.c5a87286.js.map"
+    "main.b6ad799d.js.map": "/IMLEX/static/js/main.b6ad799d.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c5a87286.js"
+    "static/js/main.b6ad799d.js"
   ]
 }
